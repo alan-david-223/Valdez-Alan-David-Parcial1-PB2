@@ -7,8 +7,8 @@ public abstract class Libro {
 	protected String nombreAutor;
 	protected Boolean disponibleParaPrestamo;
 	
-	public Libro(Integer codigo, String tituloLibro, String nombreAutor, Boolean disponibleParaPrestamo) {
-		super();
+	
+	public Libro(Integer codigo, String tituloLibro, String nombreAutor, Boolean disponibleParaPrestamo) {	
 		this.codigo = codigo;
 		this.tituloLibro = tituloLibro;
 		this.nombreAutor = nombreAutor;
