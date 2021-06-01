@@ -13,6 +13,12 @@ public abstract class Libro {
 		this.tituloLibro = tituloLibro;
 		this.nombreAutor = nombreAutor;
 		this.disponibleParaPrestamo = disponibleParaPrestamo;
-	} 
-
+	} 	
+	
+	
+	public String fotocopia(Libro libro) {
+		return libro.toString();
+		
+	}
+	
 }
