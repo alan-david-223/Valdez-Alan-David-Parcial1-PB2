@@ -2,7 +2,7 @@ package valdez.alan.david;
 
 public class Geografía extends Libro {
 
-	public Geografía() {
+	public Geografía(Integer codigo, String tituloLibro, String nombreAutor, Boolean disponibleParaPrestamo) {
 		super(codigo, nombreAutor, nombreAutor, disponibleParaPrestamo);
 		// TODO Auto-generated constructor stub
 	}
