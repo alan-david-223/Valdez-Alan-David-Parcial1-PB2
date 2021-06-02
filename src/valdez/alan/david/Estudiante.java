@@ -19,4 +19,19 @@ public class Estudiante {
 		
 	}
 
+	public void setCantLibrosRetirados(Integer cantLibrosRetirados) {
+		CantLibrosRetirados = cantLibrosRetirados;
+	}
+	
+	public void retiroLibro() {
+		if(this.CantLibrosRetirados >= 0 && this.CantLibrosRetirados <= 2)
+		this.CantLibrosRetirados++;
+	}
+	
+	public void devolvioLibro() {
+		if(this.CantLibrosRetirados >= 0 && this.CantLibrosRetirados <= 2)
+		this.CantLibrosRetirados--;
+	}
+
+			
 }

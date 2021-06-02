@@ -37,15 +37,27 @@ public class BibliotecaTest {
 	public void queElEstudiantePuedaSolicitarPrestamoDeLibros() {
 		Estudiante juanAlvarez = crearEstudiante(34929331, "Alvarez", "Juan");
 		Libro libroMate1 = crearLibroMatematica(123456789, "Algoritmos", "Armando Barreda", Boolean.TRUE);
-		retirarLibro(juanAlvarez, libroMate1);	
-		Integer librosEsperados = 1;
+		Prestamo prestamo = retirarLibro(juanAlvarez, libroMate1);	
+		Integer librosEsperados = 1;		
 		Assert.assertEquals(librosEsperados, juanAlvarez.getCantLibrosRetirados());
 		
-	}	
+	}
 	
-	private void retirarLibro(Estudiante juanAlvarez, Libro libroMate1) {
-		// TODO Auto-generated method stub
+	@Test
+	public void queElEstudiantePuedaDevolverLibros() {
+		Estudiante juanAlvarez = crearEstudiante(34929331, "Alvarez", "Juan");		
+		Libro libroMate1 = crearLibroMatematica(123456789, "Algoritmos", "Armando Barreda", Boolean.TRUE);
+		Prestamo prestamo = retirarLibro(juanAlvarez, libroMate1);		
+		prestamo.devolución(juanAlvarez, libroMate1);
+		Integer librosEsperados = 0;
+		Assert.assertEquals(librosEsperados, juanAlvarez.getCantLibrosRetirados());
 		
+	}
+	
+	private Prestamo retirarLibro(Estudiante estudiante, Libro libro) {
+		Prestamo prestamo = new Prestamo (estudiante, libro);
+		prestamo.retirar(estudiante, libro);
+		return prestamo;		
 	}
 
 	private Matematica crearLibroMatematica(Integer codLibro, String titLibro, String nomAutor, Boolean disponiblePrestamo) {
