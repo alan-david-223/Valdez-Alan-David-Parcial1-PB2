@@ -39,7 +39,8 @@ public class BibliotecaTest {
 		Libro libroMate1 = crearLibroMatematica(123456789, "Algoritmos", "Armando Barreda", Boolean.TRUE);
 		Prestamo prestamo = retirarLibro(juanAlvarez, libroMate1);	
 		Integer librosEsperados = 1;		
-		Assert.assertEquals(librosEsperados, juanAlvarez.getCantLibrosRetirados());
+		Assert.assertEquals(librosEsperados, juanAlvarez.getCantLibrosRetirados());		
+		Assert.assertEquals(Boolean.FALSE, libroMate1.disponibleParaPrestamo);
 		
 	}
 	
@@ -51,7 +52,7 @@ public class BibliotecaTest {
 		prestamo.devolución(juanAlvarez, libroMate1);
 		Integer librosEsperados = 0;
 		Assert.assertEquals(librosEsperados, juanAlvarez.getCantLibrosRetirados());
-		
+		Assert.assertEquals(Boolean.TRUE, libroMate1.disponibleParaPrestamo);
 	}
 	
 	private Prestamo retirarLibro(Estudiante estudiante, Libro libro) {
